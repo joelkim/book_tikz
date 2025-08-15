@@ -1,0 +1,17 @@
+\documentclass{standalone}
+\usepackage{kotex}
+\usepackage{tikz}
+\usepackage{gitdags}
+\setmainhangulfont{Noto Sans KR}
+\begin{document}
+    \begin{tikzpicture}
+      \begin{scope}[every node/.style=draw, minimum width=4cm, minimum height=3cm]
+      \node (worktree)         at (0,1) {};
+      \node (stage)            at (5,1) {};
+      \node (repository)       at (10,1) {};
+      \end{scope}
+      \node (worktree-label)   at (0,3) {워크트리};
+      \node (stage-label)      at (5,3) {스테이지};
+      \node (repository-label) at (10,3) {레포지토리};
+    \end{tikzpicture}
+\end{document}

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-full.css");
+
+:root {
+  --font-sans: 'Noto Sans KR', system-ui, -apple-system, 'Apple SD Gothic Neo',
+               'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+body { font-family: var(--font-sans); }
+
+
+div.cell > div.cell-output.cell-output-stdout {
+  font-family: 'D2Coding';
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 0.9em;
+  padding-left: 0.8em;
+  padding-bottom: -2em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: lightgrey;
+}
+
+div.cell div.sourceCode.cell-code {
+  border-radius: 0em;
+}
+
+div.cell div.sourceCode.cell-code pre.sourceCode.python code.sourceCode.python span.bash_prompt::before {
+   content: "$ ";
+}
+
+div.ansi-escaped-output pre {
+  line-height: 0.6rem;
+  padding: 0.2em 0.25rem 0.125rem 0.25rem;
+}
+
+.quarto-figure { margin: 2rem 0; }
