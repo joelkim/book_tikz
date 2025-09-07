@@ -1,3 +1,3 @@
 #!/bin/bash
 quarto render
-ghp-import -c tikz.datascienceschool.net -f -n -o -p _site
+ghp-import -c tikz.bykim.dev -f -n -o -p _site
