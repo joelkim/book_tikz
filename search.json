@@ -1,0 +1,398 @@
+[
+  {
+    "objectID": "reference.html",
+    "href": "reference.html",
+    "title": "참고문헌",
+    "section": "",
+    "text": "Tantau, Till. 2025. “Pgf Manual 3.1.11.” 2025. https://pgf-tikz.github.io/pgf/pgfmanual.pdf.\n\n\n“Tikz Dev.” 2025. 2025. https://tikz.dev/.",
+    "crumbs": [
+      "참고문헌"
+    ]
+  },
+  {
+    "objectID": "Transparency.html",
+    "href": "Transparency.html",
+    "title": "23 Transparency",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\n\ndraw opacity=\nfill opacity=\nopacity=\n\n\n%%tikz \n\n\\tikzset{ultra thick}\n\n\\filldraw[fill=red, fill opacity=0.5] (0:1cm) circle (12mm);\n\\filldraw[fill=green, fill opacity=0.5] (120:1cm) circle (12mm);\n\\filldraw[fill=blue, fill opacity=0.5] (-120:1cm) circle (12mm);"
+  },
+  {
+    "objectID": "Specifying Coordinates.html",
+    "href": "Specifying Coordinates.html",
+    "title": "13 Specifying Coordinates",
+    "section": "",
+    "text": "%load_ext tikzmagic"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#좌표-표시",
+    "href": "Specifying Coordinates.html#좌표-표시",
+    "title": "13 Specifying Coordinates",
+    "section": "좌표 표시",
+    "text": "좌표 표시\n\n괄호안에 좌표 표시 혹은 좌표 이름\n\n(좌표 표시)"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#좌표계",
+    "href": "Specifying Coordinates.html#좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "좌표계",
+    "text": "좌표계\n\n캔버스 좌표계\nXYZ 좌표계\n캔버스 극 좌표계\nXY 극 좌표계\n상대 좌표계\n회전 좌표계\n노드 좌표계\n질량중심 좌표계\n직교 좌표계\n교점 좌표계\n계산 좌표계"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#캔버스-좌표계",
+    "href": "Specifying Coordinates.html#캔버스-좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "캔버스 좌표계",
+    "text": "캔버스 좌표계\n\n길이 2개 (단위가 있어야 함)\n\n(길이, 길이)\n또는\n(길이 연산식, 길이 연산식)\n\n%%tikz\n\n\\draw (0cm, 0cm) -- (10cm, 10cm);\n\n\\def\\x{5cm}\n\\def\\y{2}\n\n\\draw (0cm+1cm-1cm, 11cm+\\y cm+\\y cm-\\x) -- (\\y * 1 * \\x, 0 * \\y / \\x);"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#xyz-좌표계",
+    "href": "Specifying Coordinates.html#xyz-좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "xyz 좌표계",
+    "text": "xyz 좌표계\n\n숫자 2개 또는 숫자 3개\n단위가 없어야 함\n1번째 좌표는 (10mm, 0) x-벡터\n2번째 좌표는 (0, 10mm) y-벡터\n3번째 좌표는 (-3.85mm, -3.85mm) z-벡터\nx, y, z-벡터는 변경가능\nx=길이 또는 x={(길이, 길이)}\n\n\n%%tikz -l arrows.meta\n\n\\draw[-&gt;,densely dashed] (0,0) -- (2,0);\n\\draw[-&gt;,densely dashed] (0,0) -- (0,2);\n\\draw[-&gt;,densely dashed] (0,0) -- (0,0,2);\n\n\\def\\z{0.4}\n\\draw[-Latex] (0,0) -- (1,0,\\z);\n\\draw[-Latex] (0,0) -- (1,1,\\z);\n\\draw[-Latex] (1,0,\\z) -- (1,1,\\z);\n\n\n\n\n\n\n\n\n\n%%tikz \n\n\\draw (0,0,0) -- (0,0,1) -- (0,1,1) -- (0,1,0) -- cycle;\n\\draw[y=1.5cm,z={(2*-3.85mm, -3.85mm)}] (0,0,0) -- (0,0,1) -- (0,1,1) -- (0,1,0) -- cycle;\n\\draw[y=2.0cm,z={(3*-3.85mm, -3.85mm)}] (0,0,0) -- (0,0,1) -- (0,1,1) -- (0,1,0) -- cycle;\n\\draw[z=-1cm] (0,0,0) -- (0,0,1) -- (0,1,1) -- (0,1,0) -- cycle;"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#극-좌표계",
+    "href": "Specifying Coordinates.html#극-좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "극 좌표계",
+    "text": "극 좌표계\n\n(각도:길이)(캔버스 극 좌표계) 또는 (각도:숫자)(xy 극 좌표계)\n각도 단위는 도(degree)\n0도가 시계바늘 3시\n\n\n%%tikz\n\n\\def\\radius{2cm}\n\\def\\tick{0.2cm}\n\n\\draw (0:\\radius-\\tick) -- (0:\\radius);\n\\draw (30:\\radius-\\tick) -- (30:\\radius);\n\\draw (60:\\radius-\\tick) -- (60:\\radius);\n\\draw (90:\\radius-\\tick) -- (90:\\radius);\n\\draw[-&gt;] (45:0) -- (45:0.6 * \\radius);"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#상대-좌표계",
+    "href": "Specifying Coordinates.html#상대-좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "상대 좌표계",
+    "text": "상대 좌표계\n\n+(좌표): 기준점으로부터 상대적 좌표. 기준점은 변하지 않음\n++(좌표): 기준점으로부터 상대적 좌표. 기준점이 현재 좌표로 변함\n기준점은 상황에 따라 바뀜. .. controls (좌표1) and (좌표2) ..에서 좌표2의 기준점은 뒤의 좌표\n\n\n%%tikz\n\n\\draw (0,0) -- +(1,0) -- +(1,1) -- +(0,1) -- cycle;\n\\draw (2,0) -- ++(1,0) -- ++(0,1) -- ++(-1,0) -- cycle;\n\n\n\n\n\n\n\n\n\n%%tikz\n\n\\draw (0,1) .. controls +(0:2) and +(90:1) .. (1,0);"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#회전-좌표계",
+    "href": "Specifying Coordinates.html#회전-좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "회전 좌표계",
+    "text": "회전 좌표계\n\n([turn]회전각도:거리) 또는 ([turn]숫자,숫자)\n경로 마지막 점이 원점이고 경로의 마지막 진행 방향이 기준 각도 0도\n\n\n%%tikz\n\n\\draw (0,0) -- (45:1) -- ([turn]45:1) -- ([turn]45:1) ;"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#노드-좌표계",
+    "href": "Specifying Coordinates.html#노드-좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "노드 좌표계",
+    "text": "노드 좌표계\n\n(노드명.각도) 또는 (노드명.앵커)\n\n\n%%tikz -l shapes\n\n\\node[rectangle,draw] (a) at (0,0) {aaaaa};\n\\node[circle,draw] (b) at (5,0) {bbbbb};\n\\node[ellipse,draw] (c) at (5,5) {ccccc};\n\\node (d) at (0,5) {d};\n\n\\draw (a.90) -- (c.center);\n\\draw (a.east) -- (b.180);\n\\draw (d) -- (b.100);"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#질량중심-좌표계",
+    "href": "Specifying Coordinates.html#질량중심-좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "질량중심 좌표계",
+    "text": "질량중심 좌표계\n\n(barycentric cs:&lt;노드명&gt;=숫자)\n숫자를 가중치로 하는 노드의 가중평균\n\n\n%%tikz\n\n\\node (a) at (0,0) {a};\n\\node (b) at (3,3) {b};\n\\draw (a) -- (b);\n\n\\tikzset{radius=3pt};\n\\draw (barycentric cs:a=1,b=1) circle ;\n\\draw (barycentric cs:a=1,b=3) circle ;"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#직교-좌표계",
+    "href": "Specifying Coordinates.html#직교-좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "직교 좌표계",
+    "text": "직교 좌표계\n\n(노드명 |- 노드명)\n(노드명 -| 노드명)\n\n\n%%tikz\n\n\\coordinate (a) at (0,0);\n\\coordinate (b) at (1,1);\n\n\\fill (a) circle (2pt) node[below left] {a};\n\\fill (b) circle (2pt) node[above right] {b};\n\\fill (a |- b) circle (2pt) node[above left] {c};\n\\fill (a -| b) circle (2pt) node[below right] {d};"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#교점-좌표계",
+    "href": "Specifying Coordinates.html#교점-좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "교점 좌표계",
+    "text": "교점 좌표계\n\nintersections 라이브러리 사용\nname path=경로이름로 2개의 경로 지정\nname intersections={of 경로이름1 and 경로이름2}로 교점 지점\n교점의 이름은 intersection-1, intersection-2 …\n\n\n%%tikz -l intersections\n\n\\path[name path=path 1] (0,0) -- (0.9,0);\n\\draw[name path=path 2] (1,0) -- ++(0,0,1) -- ++(0,1,0) -- ++(0,0,-1) -- cycle;\n\\path[name intersections={of=path 1 and path 2}];\n\\draw(0,0) -- (intersection-1);\n\\draw[densely dotted] (intersection-1) -- (1,0);"
+  },
+  {
+    "objectID": "Specifying Coordinates.html#계산-좌표계",
+    "href": "Specifying Coordinates.html#계산-좌표계",
+    "title": "13 Specifying Coordinates",
+    "section": "계산 좌표계",
+    "text": "계산 좌표계\n\ncalc 라이브러리 사용\n($ 노드 계산식 $)\n(좌표1) !숫자! 각도: (좌표2): 숫자는 좌표1과 좌표2 사이의 위치 (0=좌표1, 1=좌표2). 좌표1 기준으로 회전\n(좌표1) !거리! 각도: (좌표2): 거리는 좌표1부터 좌표2 방향의 겨리. 좌표1 기준으로 회전\n(좌표1) !(좌표3)! 각도: (좌표2): 좌표1과 좌표2 사이에 좌표3이 투영된 위치. 좌표3 기준으로 회전\n\n\n%%tikz -l calc\n\n\\draw (0,0) -- (1,0);\n\\draw ($(0,0)!0.5!(1,0)$) circle (1pt);\n\\draw ($(0,0)!0.5! 90: (1,0)$) circle (1pt);\n\n\\draw (0,1) -- (1, 1);\n\\draw ($(0,1)!2cm!(1,1)$) circle (1pt);\n\\draw ($(0,1)!2cm! -5: (1,1)$) circle (1pt);\n\n\\draw (0,2) -- (1, 2);\n\\draw (0.5,3) circle (1pt);\n\\draw ($(0,2)!(0.5,3)!(1,2)$) circle (1pt);\n\\draw ($(0,2)!(0.5,3)! 10: (1,2)$) circle (1pt);"
+  },
+  {
+    "objectID": "Plot.html",
+    "href": "Plot.html",
+    "title": "22 Plot",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\n\\path plot (\\x,{exp(-\\x*\\x)})\n\noptions\n\ndomain=: default -5:5\nsamples=: default 25\n\n\n\n%%tikz \n\n\\draw plot[smooth] (\\x,{5*exp(-0.2*\\x*\\x)});\n\n\n\n\n\n\n\n\n\n%%tikz\n\n\\draw[help lines] (0,0) grid (10,5);\n\n\\tikzset{normalplot/.pic={\\draw plot[rotate=-90, domain=-1:1] (\\x,{2*exp(-4*\\x*\\x)});}}\n\n\\pic at (7,4) {normalplot};\n\\pic at (1,1) {normalplot};"
+  },
+  {
+    "objectID": "Path Specification.html",
+    "href": "Path Specification.html",
+    "title": "Path Specification",
+    "section": "",
+    "text": "%load_ext tikzmagic"
+  },
+  {
+    "objectID": "Path Specification.html#operation",
+    "href": "Path Specification.html#operation",
+    "title": "Path Specification",
+    "section": "operation",
+    "text": "operation\n\nmove\nline\ncircle\nrectangle\ngrid\nparabola\nsin/cos\nplot\npic\nnode\nto\nforeach\nlet"
+  },
+  {
+    "objectID": "Path Specification.html#to-operation",
+    "href": "Path Specification.html#to-operation",
+    "title": "Path Specification",
+    "section": "to operation",
+    "text": "to operation\n\nout=시작각도, in=종료각도\nbend left, bend right\nto 다음에 오는 node 명령은 선분 가운데 위치\n\n\n%%tikz\n\n\\draw (0,0) to[bend left] node[above=10] {a} node[below=10] {b} node[fill=white] {c} (3,2);"
+  },
+  {
+    "objectID": "Path Specification.html#let-operation",
+    "href": "Path Specification.html#let-operation",
+    "title": "Path Specification",
+    "section": "let operation",
+    "text": "let operation"
+  },
+  {
+    "objectID": "Matrix_1.html",
+    "href": "Matrix_1.html",
+    "title": "57 Matrix",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\n\\matrix (name) [options] { };\n\nmatrix of nodes\nmatrix of math nodes\n\n노드별 옵션은 |[]| 안에\n\n%%tikz -l matrix\n\n\\matrix (magic) [matrix of nodes] {\n    |[draw=red,circle]|8 & 1 & 6 \\\\\n    3 & 5 & |[draw=red,circle]|7 \\\\\n    4 & 9 & 2 \\\\\n};\n\n\\draw[red,-&gt;] (magic-1-1) |- (magic-2-3);\n\n\n\n\n\n\n\n\n모든 노드에 대한 옵션은 nodes={}\n\n%%tikz -l matrix\n\n\\matrix (magic) [\n    matrix of math nodes, \n    nodes={draw=red,circle,minimum size=30pt},\n    left delimiter=(,right delimiter=\\},\n    above delimiter=\\|,below delimiter=\\rmoustache                \n] {\n    a_8 & \\phantom{a_2} & a_6 \\\\\n    a_3 & a_5 & a_7 \\\\\n    a_4 & a_9 & a_2 \\\\\n};"
+  },
+  {
+    "objectID": "Math.html",
+    "href": "Math.html",
+    "title": "56 Math",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\n\\tikzmath {}\n\n빈 줄이 있으면 안됨\n\n\n%%tikz  -l math\n\n\\tikzmath {\n    int \\i;\n    \\i = 10;\n    real \\x;\n    \\x = 3.14;\n    coordinate \\c;\n    \\c = (0,0)+(1,1);\n}\n\n\\node at (\\c) {{\\tt\\string\\i} is \\i, {\\tt\\string\\x} is \\x};\n\n\n\n\n\n\n\n\n\n변수는 숫자 혹은 문자 인덱스를 가질 수 있음\n\n\n%%tikz -l math\n\n\\tikzmath {\n    int \\x;\n    \\x1 = 3+4;\n    \\x2 = 30+40;\n    \\x3 = 300+400;\n}\n\n\\foreach \\i in {1,2,3} {\n    \\node at (\\i, 0) {\\x\\i};\n}\n\n\n\n\n\n\n\n\n\n%%tikz -l math\n\n\\tikzmath {\n    int \\c;\n    \\c{air} = 340;\n    \\c{water} = 1435;\n    \\c{steel} = 6100;\n}\n\n\\foreach \\i/\\m in {0/air, 1/water, 2/steel} {\n    \\node at (\\i,0) {\\c{\\m}};\n}"
+  },
+  {
+    "objectID": "Graphs.html",
+    "href": "Graphs.html",
+    "title": "19 Graphs",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\nlibrary graph\n\n%%tikz -l graphs\n\n\\tikzset{every node/.style = {draw}}\n\\graph { foo -&gt; bar -&gt; blub };\n\n\\begin{scope}[yshift=1cm]\n\\graph { a -&gt; b -&gt; c };\n\\end{scope}\n\n\n\n\n\n\n\n\n\n%%tikz -l graphs\n\n\\graph {\n    a -&gt; b -&gt; c;\n    d -&gt; e -&gt; f;\n    g -&gt; f;\n};\n\n\n\n\n\n\n\n\n\n%%tikz -l graphs\n\n\\graph {\n    x1/$x_1$ -&gt; x2/$x_2$ [red] -&gt; x34/{$x_3,x_4$};\n    x1 -&gt;[bend left] x34;\n};\n\n\\draw (x1) circle (9pt);\n\n\n\n\n\n\n\n\n\n%%tikz -l graphs\n\n\\graph {\n    \"$x_1$\" -&gt; \"$x_2$\"[red] -&gt; \"$x_3,x_4$\";\n    \"$x_1$\" -&gt;[bend left] \"$x_3,x_4$\";\n};\n\n\n\n\n\n\n\n\n\n%%tikz -l graphs\n\n\\graph[nodes={draw, circle}] {\n  {\"\",\"\",\"\",\"\",\"\",\"\"} \n    --[complete bipartite] {\"\",\"\",\"\",\"\",\"\",\"\"} \n    --[complete bipartite] {\"\",\"\",\"\",\"\",\"\",\"\"} \n    --[complete bipartite] {\"\",\"\",\"\",\"\",\"\",\"\"};  \n};"
+  },
+  {
+    "objectID": "Decorated Paths.html",
+    "href": "Decorated Paths.html",
+    "title": "24 Decorated Paths",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\n\n%%tikz -l decorations.pathreplacing\n\n\\draw[decorate, decoration={brace}] (0,0) -- (3,0);\n\\draw[decorate, decoration={brace,mirror}] (0,1) -- (3,1);\n\n\n\n\n\n\n\n\n\n%%tikz -l decorations.pathmorphing\n\n\\draw[decorate, decoration={zigzag}] (0,0) -- (3,0);\n\\draw[decorate, decoration={zigzag,mirror}] (0,1) -- (3,1);\n\\draw[decorate, decoration={bumps}] (0,2) -- (3,2);\n\\draw[decorate, decoration={bumps,mirror}] (0,3) -- (3,3);\n\n\n\n\n\n\n\n\n\n%%tikz -l decorations.pathmorphing"
+  },
+  {
+    "objectID": "Action on Paths.html",
+    "href": "Action on Paths.html",
+    "title": "Action on Paths",
+    "section": "",
+    "text": "%load_ext tikzmagic"
+  },
+  {
+    "objectID": "Action on Paths.html#color",
+    "href": "Action on Paths.html#color",
+    "title": "Action on Paths",
+    "section": "color",
+    "text": "color\n\ndefinecolor{name}{rgb}{r숫자, g숫자, b숫자}: 각 숫자는 0부터 1사이\ncolor=colorname!숫자, color=colorname!숫자!colorname2. text, draw, fill 색상. 숫자 0(가장 밝은 색)부터 100(가장 어두운 색)\ntext=: 노드 글자 색상\ndraw=: 선 색상\nfill=: 내부 색상\npattern color=: 내부 패턴 색상\ndouble=: 두겹선 내부 색상\n\n\n%%tikz\n\n\\definecolor{orange}{rgb}{1,0.5,0};\n\\path[color=green, text=orange, draw=blue!90, fill=blue!10, double] (0,0) rectangle (1,1) node {text};"
+  },
+  {
+    "objectID": "Action on Paths.html#draw-action",
+    "href": "Action on Paths.html#draw-action",
+    "title": "Action on Paths",
+    "section": "draw action",
+    "text": "draw action\n\nline width=0.4pt\n\nultra thin: 0.1pt\nvery thin: 0.2pt\nthin: 0.4pt\nsemitick: 0.6pt\nthick: 0.8pt\nvery thick: 1.2pt\nultra thick: 1.6pt\n\ndash pattern= on 2pt off 3pt\ndash phase=0pt\n\nsolid\ndotted, loosely dotted, densely dotted\ndashed, loosely dashed, densely dashed\ndash dot, loosely dash dot, densely dash dot\ndash dot dot, loosely dash dot dot, densely dash dot dot"
+  },
+  {
+    "objectID": "Action on Paths.html#fill-action",
+    "href": "Action on Paths.html#fill-action",
+    "title": "Action on Paths",
+    "section": "fill action",
+    "text": "fill action\n\n--, circle, rectangle operation에 의해 생성된 모든 공간에 색칠\n닫힌 경로가 아니더라도 색칠\npattern 라이브러리\n\nhorizontal lines\nvertical lines\nnorth east lines\nnorth west lines\ngrid\ncrosshatch\ndots\ncrosshatch dots\nfivepointed stars\nsixpointed stars\nbricks\ncheckerboard\n\n\n\n%%tikz -l patterns\n\n\\draw[pattern color=green!40!black,pattern=checkerboard] (0,0) -- (5,5) -- (5,0);"
+  },
+  {
+    "objectID": "Action on Paths.html#shade-action",
+    "href": "Action on Paths.html#shade-action",
+    "title": "Action on Paths",
+    "section": "shade action",
+    "text": "shade action"
+  },
+  {
+    "objectID": "Design Principles.html",
+    "href": "Design Principles.html",
+    "title": "Design Principles",
+    "section": "",
+    "text": "LaTeX\n\\usepackage{tikz}\nTeX\n\\input tikz.tex"
+  },
+  {
+    "objectID": "Design Principles.html#좌표-지정",
+    "href": "Design Principles.html#좌표-지정",
+    "title": "Design Principles",
+    "section": "좌표 지정",
+    "text": "좌표 지정\n\n2차원 (숫자 + 단위, 숫자 + 단위)\n\n(1cm,2pt)\n단위가 생략되면 xy-좌표계 단위 사용\n디폴트 좌표계는 (1cm 오른쪽, 1cm 위쪽)\n\n3차원 (숫자 + 단위, 숫자 + 단위, 숫자 + 단위)\n\n단위가 생략되면 xyz-좌표계 단위 사용\n디폴트 좌표계는 (1cm 오른쪽, 1cm 위쪽, (-3.85mm,-3.85mm) 왼쪽아래)\n\n앵커 (앵커 이름)\n좌표 이동\n\n+(x,y): 현재 좌표에서 이동한 좌표, 이전 좌표를 이동시키지 않음\n++(x,y): 현재 좌표에서 이동한 좌표, 이전 좌표를 이동시킴"
+  },
+  {
+    "objectID": "Design Principles.html#경로-지정",
+    "href": "Design Principles.html#경로-지정",
+    "title": "Design Principles",
+    "section": "경로 지정",
+    "text": "경로 지정\n\n좌표의 열(sequence)로 나타낸다."
+  },
+  {
+    "objectID": "Hierachical Structure.html",
+    "href": "Hierachical Structure.html",
+    "title": "12. Hierachical Structure",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\nThe tikzmagic extension is already loaded. To reload it, use:\n  %reload_ext tikzmagic"
+  },
+  {
+    "objectID": "Hierachical Structure.html#scope",
+    "href": "Hierachical Structure.html#scope",
+    "title": "12. Hierachical Structure",
+    "section": "scope",
+    "text": "scope\n\\begin{scope}[&lt;options&gt;]\n&lt;tikz command&gt;;\n&lt;tikz command&gt;;\n&lt;tikz command&gt;;\n\\end{scope}\n또는\n\\scoped[&lt;options&gt;] &lt;single tikz command&gt;;\n또는\n\\path .... {[&lt;options&gt;] path commands } .... ;\n\nQ: 왜 color 옵션은 에서 듣지 않는 것인가?"
+  },
+  {
+    "objectID": "Hierachical Structure.html#keyvalue-처리",
+    "href": "Hierachical Structure.html#keyvalue-처리",
+    "title": "12. Hierachical Structure",
+    "section": "<key>=<value> 처리",
+    "text": "&lt;key&gt;=&lt;value&gt; 처리\n\n&lt;key&gt;가 백슬래시로 시작하면 바로 처리\n\\tikz\\&lt;key&gt; 검색\n\\pgf\\&lt;key&gt; 검색\ncolor라면 color=&lt;key&gt;\ndash를 포함하면 arrows=&lt;key&gt;\nshape라면 shape=&lt;key&gt;"
+  },
+  {
+    "objectID": "Hierachical Structure.html#색상",
+    "href": "Hierachical Structure.html#색상",
+    "title": "12. Hierachical Structure",
+    "section": "색상",
+    "text": "색상\n\ncolor=&lt;color&gt;: 선과 텍스트, 채우기 모두\ndraw=&lt;color&gt;: 선만\nfill=&lt;color&gt;: 채우기만\ntext=&lt;color&gt;: 텍스트만"
+  },
+  {
+    "objectID": "Hierachical Structure.html#스타일",
+    "href": "Hierachical Structure.html#스타일",
+    "title": "12. Hierachical Structure",
+    "section": "스타일",
+    "text": "스타일\n\\tikzset{style name/.style={&lt;options&gt;}}\n\n인수\n\n\\tikzset{style name/.style={&lt;options with #1&gt;}}\n\n인수 디폴트값\n\n\\tikzset{style name/.default={디폴트값}}\n\n%%tikz\n\n\n\n\\draw (0,0) grid (2,2);\n\\draw[help lines] (2,0) grid +(2,2);\n\n\\tikzset{help lines/.style={red!50, #1}};\n\\tikzset{help lines/.default=ultra thick};\n\n\\draw[help lines=ultra thin] (0,0) grid +(2,-2);"
+  },
+  {
+    "objectID": "Matrix.html",
+    "href": "Matrix.html",
+    "title": "20 Matrix",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\n\n%%tikz -l graphs\n\n\\matrix[column sep=1cm, \n        every node/.style={minimum size=5mm}] {\n  \\node[draw] (a) {a};&  \n  \\node[draw] (X) {X};&\n  \\node[draw] (g) {g};\\\\\n};\n\n\\graph {\n    (a) -&gt; (X) -&gt; (g);\n    (a) -&gt;[bend right] (g);\n};"
+  },
+  {
+    "objectID": "Nodes and Edges.html",
+    "href": "Nodes and Edges.html",
+    "title": "17 Nodes and Edges",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\n\\[\n\\hbox{\\path} \\ldots \\hbox{node}\n\\overbrace{\n    \\, \\hbox{foreach} \\, \\underbrace{\n        [\\hbox{option}] \\, (\\hbox{name}) \\, \\hbox{at} \\, (\\hbox{coordinate})\n    }_{\\hbox{순서 상관없음}}\n}^{\\hbox{필수 아님}}\n{\\hbox{{text}}}\n\\]\n\noptions\n\noperation options\n\ndraw=\nfill=\n\nshape options\n\nrectangle\ncircle\ncoordinate\n\ndepth\n\nbehind path\n\nstyle\n\nevery node=\nevery rectangle node=\nevery circle node=\nevery coordinate node=\n\nsize\n\ninner sep=\ninner xsep=\ninner yset=\nouter sep=: auto\nouter xsep=\nouter ysep=\nminimum size=\nminimum height=\nminimum width=\n\nrotate\n\nshape border rotate=\n\ntext\n\nnode font=\nfont=\nalign=: left, center, right,flush left, flush center, flush right, justify\ntext height=\ntext depth=\n\nposition\n\nanchor=: center, base, north, south, east, west, …\nabove=\nbelow=\nleft=\nright=\npos=\nsloped\n\n\ncolor 옵션은 text, draw, fill 모두에 적용된다. 각각의 색상 옵션과 color 옵션을 동시에 사용할 때는 순서에 주의한다. color 옵션이 가장 앞에 나와야 한다.\n\n\n%%tikz -p kotex\n\n\\node[black,draw,text=red] {$\\alpha + \\hbox{길이가 긴 english와 한글}$};\n\n\n\n\n\n\n\n\n\npath에 대한 draw, fill 명령은 노드에는 적용되지 않는다. 각각의 노드에 대해 별도로 draw, fill 명령을 주어야 한다.\n\n\n%%tikz \n\n\\draw (0,0) -- (1,1) node {text};\n\\draw (0,0) -- (1,0) node[draw] {text};\n\\fill (-1,0) -- (-1,1) -- (-2,1) node {text};\n\\fill (-1,0) -- (0,1) -- (0,0) node[fill=blue] {text};\n\n\n\n\n\n\n\n\n\n%%tikz \n\n\\node foreach \\x in {1,...,4} foreach \\y in {1,...,4} [draw] (\\x/\\y) at (\\x, \\y) {\\x,\\y};\n\n\\draw (1/2) -- (2/3);\n\n\n\n\n\n\n\n\n\npos 옵션은 경로상의 마지막 “라인”상에 노드를 위치시킨다.\n\n\n%%tikz\n\n\\draw (0,0) grid (10, 1);\n\\draw (0,0) -- (5,0) (6,0)    (10, 0) node[pos=0.2] {0.2} node[pos=0.5] {0.5} node[pos=0.8] {0.8};\n\\draw (0,1) -- (5,1) (6,1) -- (10, 1) node[pos=0.2] {0.2} node[pos=0.5] {0.5} node[pos=0.8] {0.8};\n\n\n\n\n\n\n\n\n\n%%tikz \n\n\\node[draw] (a) at (0,0) {a};\n\\node[draw] (b) at (1,1) {b};\n\\draw (a) -| (b) node[pos=0.8, right] {c} ;"
+  },
+  {
+    "objectID": "Pics.html",
+    "href": "Pics.html",
+    "title": "18 Pics",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\n\\tikzset{picname/.pic={}}\n\n%%tikz\n\n\\tikzset{seagull/.pic={\n    \\draw (-3mm,0) to[bend left] (0,0) to[bend left] (3mm,0);\n}}\n\n\\fill[fill=blue!20] \n   (1,1)\n-- (2,2) pic {seagull}\n-- (3,2) pic {seagull}\n-- (3,1) pic[rotate=30] {seagull}\n-- (2,1) pic[scale=2] {seagull};\n\n\n\n\n\n\n\n\n\n%%tikz -e utf-8 -p kotex\n\n\\node[scale=2] at (0,0) {$ \\displaystyle \n      \\lim_{N\\rightarrow \\infty} {{1}\\over{N}} \\sum^N Y_t Y_{t+k} =  {\\rm E}[Y_tY_{t+k}] \n$};\n\n\\node[draw, circle, dotted, minimum size=25pt] (N) at (-2.7,-0.65) {};\n\\node (N-comment) at (-1,-2) {데이터 개수};\n\\draw[-&gt;, dotted] (N) to[bend right] (N-comment.west);"
+  },
+  {
+    "objectID": "Shapes.html",
+    "href": "Shapes.html",
+    "title": "67 Shapes",
+    "section": "",
+    "text": "%load_ext tikzmagic\n\nThe tikzmagic extension is already loaded. To reload it, use:\n  %reload_ext tikzmagic"
+  },
+  {
+    "objectID": "Shapes.html#anchors",
+    "href": "Shapes.html#anchors",
+    "title": "67 Shapes",
+    "section": "anchors",
+    "text": "anchors\n\ncenter, mid, base, text\nnorth, east, south, west, north west, north east, south west, south east\nmid west, base west, mid east, base east"
+  },
+  {
+    "objectID": "Shapes.html#shapes.geomatric",
+    "href": "Shapes.html#shapes.geomatric",
+    "title": "67 Shapes",
+    "section": "shapes.geomatric",
+    "text": "shapes.geomatric\n\ndiamond: aspect=&lt;value&gt;\nellipse\ntrapezium: trapezium left angle, trapezium right angle, trapezium stretches\nsemicircle\nregular polygon\nstar\nisosceles triagle\nkite\ndart\ncircular sector\ncylinder\n\n\n%%tikz -l shapes.geometric -s 1500,1000\n\n\\node[draw,diamond,aspect=2] at (0,0) {diamond}; \n\\node[draw,ellipse] at (2,2) {ellipse}; \n\\node[draw,trapezium,trapezium left angle=90] at (4,0) {trapezium}; \n\\node[draw,semicircle,yscale=0.5,minimum width=2cm] at (6,2) {}; \n\\node[draw,regular polygon,regular polygon sides=5] at (8,0) {polygon}; \n\\node[draw,star,star points=6] at (10,2) {star}; \n\\node[draw,circular sector,circular sector angle=270] at (12,0) {sector\\ \\ \\ };"
+  },
+  {
+    "objectID": "Shapes.html#shapes.symbols",
+    "href": "Shapes.html#shapes.symbols",
+    "title": "67 Shapes",
+    "section": "shapes.symbols",
+    "text": "shapes.symbols\n\nforbidden sign\ncorrect forbidden sign\nmagnifying glass\ncloud\nstarburst\nsignal\ntape\nmagnetic tape"
+  },
+  {
+    "objectID": "Shapes.html#shapes.arrows",
+    "href": "Shapes.html#shapes.arrows",
+    "title": "67 Shapes",
+    "section": "shapes.arrows",
+    "text": "shapes.arrows\n\nsingle arrow\ndouble arrow\narrow box"
+  },
+  {
+    "objectID": "Shapes.html#shapes.multipart",
+    "href": "Shapes.html#shapes.multipart",
+    "title": "67 Shapes",
+    "section": "shapes.multipart",
+    "text": "shapes.multipart\n\ncircle split\ncircle solidus\nellipse split\nrectangle split"
+  },
+  {
+    "objectID": "Shapes.html#shapes.callouts",
+    "href": "Shapes.html#shapes.callouts",
+    "title": "67 Shapes",
+    "section": "shapes.callouts",
+    "text": "shapes.callouts\n\nrectangle callout\nellipse callout\ncloud callout"
+  },
+  {
+    "objectID": "Shapes.html#shapes.misc",
+    "href": "Shapes.html#shapes.misc",
+    "title": "67 Shapes",
+    "section": "shapes.misc",
+    "text": "shapes.misc\n\ncross out\nstrike out\nrounded rectangle\nchamfered rectangle"
+  },
+  {
+    "objectID": "Transformation.html",
+    "href": "Transformation.html",
+    "title": "25 Transformation",
+    "section": "",
+    "text": "x, y, z\nshift={()}, xshift=dim, yshift=dim\nrotate, rotate around x, rotate around y, rotate around z\nscale, xscale, yscale\n\n\n%load_ext tikzmagic\n\n\n%%tikz\n\n\\draw[help lines] (0,-5) grid (25,5);\n\\fill (0,0) circle (3mm);\n\n\\draw[shift={(1,2)}, xscale=1, rotate=45] grid (2,2);\n\n\n\n\n\n\n\n\n\n%%tikz\n\n\\def\\mygrid#1#2{%\n    \\foreach \\x in {0,...,#1} {\n        \\foreach \\y in {0,...,#2} {\n            \\filldraw[fill=gray] (\\x,\\y) -- ++(1,0) -- ++(0,1) -- ++(-1,0) -- cycle;\n        }\n    } \n}\n\n\\begin{scope}[x={(0.95cm,-0.1cm)},z={(-0.8cm,-0.2cm)}]\n    \\foreach \\i in {0,5,10,15,20,25} {  \n        \\begin{scope}[shift={(\\i,0)}, rotate around y=-90]\n            \\mygrid {10} {10}\n        \\end{scope}\n    }\n\\end{scope}"
+  },
+  {
+    "objectID": "concept.html#명령",
+    "href": "concept.html#명령",
+    "title": "기본 개념",
+    "section": "명령",
+    "text": "명령",
+    "crumbs": [
+      "기본 개념"
+    ]
+  },
+  {
+    "objectID": "concept.html#옵션",
+    "href": "concept.html#옵션",
+    "title": "기본 개념",
+    "section": "옵션",
+    "text": "옵션",
+    "crumbs": [
+      "기본 개념"
+    ]
+  },
+  {
+    "objectID": "path.html",
+    "href": "path.html",
+    "title": "path 명령",
+    "section": "",
+    "text": "Manual, Chapter 15\n\nchrome-extension://oemmndcbldboiebfnladdacbdfmadadm/https://pgf-tikz.github.io/pgf/pgfmanual.pdf#section.15)",
+    "crumbs": [
+      "`path` 명령"
+    ]
+  },
+  {
+    "objectID": "path.html#옵션",
+    "href": "path.html#옵션",
+    "title": "path 명령",
+    "section": "옵션",
+    "text": "옵션\n\n\\path 명령의 옵션은 뒤에 올 인수를 “어떻게” 처리하는지를 지시하는 정보다.\n복수의 옵션을 같이 사용할 수 있다.\n옵션 자체의 값인수를 =옵션값 형식으로 첨부할 수 있다.\n\n\n\n\n옵션\n옵션값 인수\n설명\n\n\n\n\ndraw\n&lt;color&gt;\n선을 그린다.\n\n\nfill\n&lt;color&gt;\n선으로 닫힌 공간을 색상으로 채운다.\n\n\npattern\n&lt;pattern&gt;\n선으로 닫힌 공간을 패턴으로 채운다.\n\n\nshade\n-\n선으로 닫힌 공간을 세이딩한다.\n\n\nclip\n-\n선으로 닫힌 공간을 잘라낸다.",
+    "crumbs": [
+      "`path` 명령"
+    ]
+  },
+  {
+    "objectID": "path.html#명령인수",
+    "href": "path.html#명령인수",
+    "title": "path 명령",
+    "section": "명령인수",
+    "text": "명령인수\n\n\\path 명령의 명령인수는 현재 펜의 좌표 또는 현재 펜의 좌표와 추가적인 지정좌표 사이에서 어떤 그림을 그리는지를 지시한다.\n그림의 형태를 자세하게 지정하기 위해 명령인수 뒤에 명령인수 자체의 옵션값을 붙일 수 있다.\n\n\n\n\n\n\n\n\n\n\n\n명령인수\n형식\n그림\n펜 이동\n옵션\n\n\n\n\nmove-to\n&lt;좌표&gt;\n-\n이동\n-\n\n\nline-to\n-- &lt;좌표&gt;\n현재 펜 좌표에서 지정좌표까지 직선을 그린다.\n이동\n-\n\n\ncurve-to\n.. controls &lt;좌표&gt; .. &lt;좌표&gt;\n현재 펜 좌표에서 지정좌표까지 곡선을 그린다.\n이동\n-\n\n\ncircle\ncircle\n현재 펜 좌표에서 원을 그린다.\n-\nradius\n\n\nrectangle\nrectangle &lt;좌표&gt;\n현재 펜 좌표에서 지정좌표까지 사각형을 그린다.\n이동\n-\n\n\ngrid\ngrid &lt;좌표&gt;\n현재 펜 좌표에서 지정좌표까지 그리드를 그린다.\n이동\nstep\n\n\nnode\nnode {text}\n현재 펜 좌표에서 텍스트박스를 그린다.\n-\nshape, draw, fill, …\n\n\n\n\n라인\n\n\n\\documentclass{standalone}\n\\usepackage{kotex}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\\setmainhangulfont{Noto Sans KR}\n\\begin{document}\n    \\begin{tikzpicture}\n      \\path[draw]\n        (0,0)\n        -- (1,0)\n        ;\n    \\end{tikzpicture}\n\\end{document}\n\n\n\n\n\n\n\n\n\n\n\n원\n\n\n\\documentclass{standalone}\n\\usepackage{kotex}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\\setmainhangulfont{Noto Sans KR}\n\\begin{document}\n    \\begin{tikzpicture}\n      \\path[draw=black,fill=lightgray]\n        (0,0)\n        circle[radius=1cm]\n        ;\n    \\end{tikzpicture}\n\\end{document}\n\n\n\n\n\n\n\n\n\n\n\n\\documentclass{standalone}\n\\usepackage{kotex}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\\setmainhangulfont{Noto Sans KR}\n\\begin{document}\n    \\begin{tikzpicture}\n      \\path[draw,fill=lightgray]\n        (0,0)\n        circle[radius=0.1cm]\n        -- (1,0)\n        circle[radius=0.1cm]\n        -- (1,1)\n        circle[radius=0.1cm]\n        ;\n    \\end{tikzpicture}\n\\end{document}\n\n\n\n\n\n\n\n\n\n\n\n\\documentclass{standalone}\n\\usepackage{kotex}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\\setmainhangulfont{Noto Sans KR}\n\\begin{document}\n    \\begin{tikzpicture}\n      \\path[draw, fill=lightgray]\n        (0,0)\n        -- (1,0)\n        circle[radius=0.1cm]\n        -- (1,1)\n        -- (0,0)\n        ;\n    \\end{tikzpicture}\n\\end{document}\n\n\n\n\n\n\n\n\n\n\n\n\\documentclass{standalone}\n\\usepackage{kotex}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\\setmainhangulfont{Noto Sans KR}\n\\begin{document}\n    \\begin{tikzpicture}\n      \\path[draw, fill=lightgray]\n        (0,0)\n        -- (1,0)\n        circle[radius=0.1cm]\n        -- (0.6,1)\n        rectangle (0.4,0.5)\n        -- (0,0);\n    \\end{tikzpicture}\n\\end{document}\n\n\n\n\n\n\n\n\n\n\n\nnode\n\n노드는 특수한 명령인수다.\n{}의 형태로 텍스트를 받아서 그린다.\n상위 \\path 명령의 draw, fill 옵션의 영향을 받지 않고 자체 draw, fill 옵션만 따른다.\n\n\n\n\\documentclass{standalone}\n\\usepackage{kotex}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\\setmainhangulfont{Noto Sans KR}\n\\begin{document}\n    \\begin{tikzpicture}\n      \\path\n        (0,0) node {가}\n        (1,0) node[draw] {나}\n        (2,0) node[draw,fill=lightgray] {다}\n        ;\n    \\end{tikzpicture}\n\\end{document}\n\n\n\n\n\n\n\n\n\n\nshape 자체옵션값을 지정하여 박스의 모양을 바꿀 수 있다.\nshape 자체옵션값을 지정할 때 shape= 부분을 생략하고 값만 쓸 수 있다.\n\n\n\n\\documentclass{standalone}\n\\usepackage{kotex}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\\setmainhangulfont{Noto Sans KR}\n\\begin{document}\n    \\begin{tikzpicture}\n      \\path\n        (0,0) node[draw,shape=circle] {가}\n        (1,0) node[draw,circle] {나}\n        (2,0) node[draw,diamond] {다}\n        ;\n    \\end{tikzpicture}\n\\end{document}\n\n\n\n\n\n\n\n\n\n\n“at &lt;좌표&gt;” 특수 인수를 붙이면 현재 좌표와 아무런 상관없이 지정한 좌표에 놓을 수 있다.\n\n\n\n\\documentclass{standalone}\n\\usepackage{kotex}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\\setmainhangulfont{Noto Sans KR}\n\\begin{document}\n    \\begin{tikzpicture}\n      \\path\n        node[draw,circle]  at (0,0) {가}\n        node[draw,circle]  at (1,0) {나}\n        node[draw,diamond] at (2,0) {다}\n        ;\n    \\end{tikzpicture}\n\\end{document}\n\n\n\n\n\n\n\n\n\n\n재사용을 위해 “node (이름)”의 형태로 이름을 붙일 수 있다.\n\n\n\n\\documentclass{standalone}\n\\usepackage{kotex}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\\setmainhangulfont{Noto Sans KR}\n\\begin{document}\n    \\begin{tikzpicture}\n      \\path\n        node[draw,circle]  (a) at (0,0) {가}\n        node[draw,circle]  (b) at (1,0) {나}\n        node[draw,diamond] (c) at (2,0) {다}\n        ;\n    \\end{tikzpicture}\n\\end{document}\n\n\n\n\n\n\n\n\n\n\n\\path ... node ... 명령을 \\node ...로 축약 가능\n\n\n\n\\documentclass{standalone}\n\\usepackage{kotex}\n\\usepackage{tikz}\n\\usetikzlibrary{shapes.geometric}\n\\setmainhangulfont{Noto Sans KR}\n\\begin{document}\n    \\begin{tikzpicture}\n      \\node[draw,circle]  (a) at (0,0) {가};\n      \\node[draw,circle]  (b) at (1,0) {나};\n      \\node[draw,diamond] (c) at (2,0) {다};\n    \\end{tikzpicture}\n\\end{document}",
+    "crumbs": [
+      "`path` 명령"
+    ]
+  }
+]
